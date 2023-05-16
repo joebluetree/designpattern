@@ -36,9 +36,6 @@ public class Circle implements Shape {
 }
 
 
-
-
-
 public class ShapeFactory {
    //use getShape method to get object of type shape 
    public Shape getShape(String shapeType){
@@ -55,6 +52,7 @@ public class ShapeFactory {
       return null;
    }
 }
+
 
 public class FactoryPatternDemo {
    public static void main(String[] args) {
@@ -73,6 +71,7 @@ public class FactoryPatternDemo {
       shape3.draw();
    }
 }
+
 
 Output
 Inside Circle::draw() method.
