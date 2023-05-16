@@ -5,9 +5,9 @@ In this pattern the object creation logic is separated from the user interface. 
 </p>
 
 
-<p>
-Implementation
-</p>
+
+## Implementation
+
 
 <p>
 <img src="image1.png"> </img>
