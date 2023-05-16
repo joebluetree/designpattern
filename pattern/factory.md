@@ -5,5 +5,5 @@ Implementation
 </p>
 
 <p>
-<img source="image1.png"> </img>
+<img src="image1.png"> </img>
 </p>
