@@ -1,4 +1,4 @@
-# Factory Pattern
+# Strategy Pattern
 <p>
 In this pattern the object creation logic is separated from the user interface. The consumer or the client code will not have the object creation code. Object creation code is moved into another class and the client uses this class whenever an object need to be created.
 </p>
