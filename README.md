@@ -9,7 +9,7 @@
 ## Creational Pattern
 <p>
 <ul>
-<li><a href="pattern/factory.md">Factory Pattern</a> </li>
+<li><a href="factory/index.md">Factory Pattern</a> </li>
 </ul>
 </p>
 
@@ -17,6 +17,6 @@
 ## Behavioral Pattern
 <p>
 <ul>
-<li><a href="pattern/strategy.md">Strategy Pattern</a> </li>
+<li><a href="strategy/index.md">Strategy Pattern</a> </li>
 </ul>
 </p>
