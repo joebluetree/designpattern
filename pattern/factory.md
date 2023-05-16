@@ -35,7 +35,7 @@ public class Circle implements Shape {
    }
 }
 
-
+//Factory Class
 public class ShapeFactory {
    //use getShape method to get object of type shape 
    public Shape getShape(String shapeType){
@@ -53,7 +53,7 @@ public class ShapeFactory {
    }
 }
 
-
+//Client Code
 public class FactoryPatternDemo {
    public static void main(String[] args) {
       ShapeFactory shapeFactory = new ShapeFactory();
