@@ -1,5 +1,11 @@
 # Design Pattern
 
+
+## Structural Pattern
+<p>
+</p>
+
+
 ## Creational Pattern
 <p>
 <ul>
@@ -7,12 +13,8 @@
 </ul>
 </p>
 
-## Structural Pattern
-<p>
-</p>
 
-
-## Behavior Pattern
+## Behavioral Pattern
 <p>
 <ul>
 <li><a href="pattern/strategy.md">Strategy Pattern</a> </li>
