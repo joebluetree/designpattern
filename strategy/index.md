@@ -1,7 +1,8 @@
 # Strategy Pattern
 <p>
-In this pattern the object creation logic is separated from the user interface. The consumer or the client code will not have the object creation code. Object creation code is moved into another class and the client uses this class whenever an object need to be created.
-</p>
+In Strategy pattern, a class behavior or its algorithm can be changed at run time. This type of design pattern comes under behavior pattern.
+
+In Strategy pattern, we create objects which represent various strategies and a context object whose behavior varies as per its strategy object. The strategy object changes the executing algorithm of the context object.</p>
 
 ## Implementation
 
@@ -11,67 +12,58 @@ In this pattern the object creation logic is separated from the user interface. 
 
 
 ```
-
-public interface Shape {
-   void draw();
+public interface Strategy {
+   public int doOperation(int num1, int num2);
 }
-public class Rectangle implements Shape {
-   public void draw() {
-      System.out.println("Inside Rectangle::draw() method.");
+public class OperationAdd implements Strategy{
+   @Override
+   public int doOperation(int num1, int num2) {
+      return num1 + num2;
    }
 }
-public class Square implements Shape {
-   public void draw() {
-      System.out.println("Inside Square::draw() method.");
+public class OperationSubstract implements Strategy{
+   @Override
+   public int doOperation(int num1, int num2) {
+      return num1 - num2;
    }
 }
-public class Circle implements Shape {
-   public void draw() {
-      System.out.println("Inside Circle::draw() method.");
-   }
-}
-
-//Factory Class
-public class ShapeFactory {
-   //use getShape method to get object of type shape 
-   public Shape getShape(String shapeType){
-      if(shapeType == null){
-         return null;
-      }		
-      if(shapeType.equalsIgnoreCase("CIRCLE")){
-         return new Circle();
-      } else if(shapeType.equalsIgnoreCase("RECTANGLE")){
-         return new Rectangle();
-      } else if(shapeType.equalsIgnoreCase("SQUARE")){
-         return new Square();
-      }
-      return null;
+public class OperationMultiply implements Strategy{
+   @Override
+   public int doOperation(int num1, int num2) {
+      return num1 * num2;
    }
 }
 
-//Client Code
-public class FactoryPatternDemo {
+public class Context {
+   private Strategy strategy;
+
+   public Context(Strategy strategy){
+      this.strategy = strategy;
+   }
+
+   public int executeStrategy(int num1, int num2){
+      return strategy.doOperation(num1, num2);
+   }
+}
+
+public class StrategyPatternDemo {
    public static void main(String[] args) {
-      ShapeFactory shapeFactory = new ShapeFactory();
-      //get an object of Circle and call its draw method.
-      Shape shape1 = shapeFactory.getShape("CIRCLE");
-      //call draw method of Circle
-      shape1.draw();
-      //get an object of Rectangle and call its draw method.
-      Shape shape2 = shapeFactory.getShape("RECTANGLE");
-      //call draw method of Rectangle
-      shape2.draw();
-      //get an object of Square and call its draw method.
-      Shape shape3 = shapeFactory.getShape("SQUARE");
-      //call draw method of square
-      shape3.draw();
+      Context context = new Context(new OperationAdd());		
+      System.out.println("10 + 5 = " + context.executeStrategy(10, 5));
+
+      context = new Context(new OperationSubstract());		
+      System.out.println("10 - 5 = " + context.executeStrategy(10, 5));
+
+      context = new Context(new OperationMultiply());		
+      System.out.println("10 * 5 = " + context.executeStrategy(10, 5));
    }
 }
 
 
-Output
-Inside Circle::draw() method.
-Inside Rectangle::draw() method.
-Inside Square::draw() method.
+output.
+
+10 + 5 = 15
+10 - 5 = 5
+10 * 5 = 50
 
 ```
