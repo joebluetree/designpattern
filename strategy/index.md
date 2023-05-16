@@ -5,7 +5,7 @@ In Strategy pattern, a class behavior or its algorithm can be changed at run tim
 In Strategy pattern, we create objects which represent various strategies and a context object whose behavior varies as per its strategy object. The strategy object changes the executing algorithm of the context object.
 </p>
 
-## IOC - Inversion Of Control. SOC - Seperation  Of Concern
+## IOC - Inversion Of Control. SOC - Seperation  Of Concern and Dependency Injection
 <p>
 ioc is moving part of the code into another class for better usability and loose coupling. Strategy Pattern can be used in this case
 </p>	
